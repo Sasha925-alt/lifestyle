@@ -15,7 +15,13 @@
     <header>
         <div class="container">
             <div class="header-wrapper">
-                <nav>
+                <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+                    aria-controls="main-navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav id="main-navigation">
                     <ul>
                         <li><a href="#">LIFESTYLE</a></li>
                         <li><a href="#">PHOTOGRAPHS</a></li>
@@ -32,7 +38,9 @@
             <div class="container">
                 <div class="sec1-wrap flex">
                     <div class="sec1-card">
-                        <img src="./images/1 1.png" alt="img1">
+                        <div class="card-image">
+                            <img src="./images/1 1.png" alt="img1">
+                        </div>
                         <div class="sec1-info">
                             <h4>LIFESTYLE</h4>
                             <h2>If you want to cleanse yourself, go to the mountains.</h2>
@@ -40,13 +48,13 @@
                                 incididunt ut
                                 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                                 ullamco
-                                laboris nisi ut aliquip ex ea.
+                                laboris nisi ut aliquip ex ea.</p>
                         </div>
-
-
                     </div>
                     <div class="sec1-card">
-                        <img src="./images/2 1.png" alt="img1">
+                        <div class="card-image">
+                            <img src="./images/2 1.png" alt="img1">
+                        </div>
                         <div class="sec1-info">
                             <h4>LIFESTYLE</h4>
                             <h2>Believe in yourself and you can do anything</h2>
@@ -55,6 +63,8 @@
                                 exercitation ullamco laboris nisi ut aliquip ex ea.</p>
                         </div>
                     </div>
+                </div>
+            </div>
         </section>
 
 
@@ -63,19 +73,23 @@
             <div class="container">
                 <div class="sec2-wrap flex">
                     <div class="sec2-card">
-                        <img src="./images/3 1.png" alt="img2">
+                        <div class="card-image">
+                            <img src="./images/3 1.png" alt="img2">
+                        </div>
                         <div class="sec2-info">
                             <h4>PHOTODAIRY</h4>
                             <h2>Football is more than a sport!</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
                         </div>
                     </div>
 
                     <div class="sec2-card">
-                        <img src="./images/4 1.png" alt="img2">
-                        <div class="sec2-card">
+                        <div class="card-image">
+                            <img src="./images/4 1.png" alt="img2">
+                        </div>
+                        <div class="sec2-info">
                             <h4>PHOTODAIRY</h4>
                             <h2>Reading is a special pleasure</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -84,6 +98,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
 
@@ -95,19 +110,23 @@
             <div class="container">
                 <div class="sec2-wrap flex">
                     <div class="sec2-card">
-                        <img src="./images/1 2.png" alt="img2">
+                        <div class="card-image">
+                            <img src="./images/1 2.png" alt="img2">
+                        </div>
                         <div class="sec2-info">
                             <h4>LIFESTYLE</h4>
                             <h2>A dog is the best friend</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea.
+                                exercitation ullamco laboris nisi ut aliquip ex ea.</p>
                         </div>
                     </div>
 
                     <div class="sec2-card">
-                        <img src="./images/2 2.png" alt="img2">
-                        <div class="sec2-card">
+                        <div class="card-image">
+                            <img src="./images/2 2.png" alt="img2">
+                        </div>
+                        <div class="sec2-info">
                             <h4>LIFESTYLE</h4>
                             <h2>Let's cook together</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -116,46 +135,29 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
-        <div class="box1">
+        <button class="box1" type="button">
             Load more
-        </div>
+        </button>
 
 
 
 
 
 
+        <script>
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navigation = document.querySelector("#main-navigation");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            menuToggle.addEventListener("click", () => {
+                const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+                menuToggle.setAttribute("aria-expanded", String(!isOpen));
+                menuToggle.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+                navigation.classList.toggle("is-open", !isOpen);
+            });
+        </script>
 </body>
 
 </html>
